@@ -10,13 +10,16 @@
       </ul>
     </div>
   <% end %>
-
-  <%= simple_form_for (@product) do |f| %>
-    <%= f.input :name, placeholder: "Add your Cloth"%>
-    <%= f.input :description, placeholder: "Add a description"%>
-    <%= f.input :image_url, as: :file %>
-    <%= f.input :adquisition_date, html5: true %>
-    <%= f.button :submit, "Confirm", class: "btn btn-outline-dark btn-new" %>
-  <% end %>
+  <div class="my-5">
+    <%= simple_form_for (@product) do |f| %>
+      <%= f.input :name, placeholder: "Add your Cloth", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= f.input :description, placeholder: "Add a description", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
+      <%= f.input :image_url, as: :file %>
+      <%= f.input :adquisition_date, html5: true %>
+      <%= f.button :submit, "Confirm", class: "btn btn-outline-dark btn-new" %>
+    <% end %>
+  </div>
 <% end %>
+
+
 

@@ -20,13 +20,3 @@ product_picture3= URI.open("https://i.pinimg.com/564x/5d/0f/13/5d0f13b181e273bff
 product3 = Product.new(name: 'Colours tshirt', description: %{colours}, adquisition_date: DateTime.new(2022,2,5,17))
 product3.photo.attach(io: product_picture3, filename: "tshirtcolours.jpg", content_type: "image/png")
 product3.save
-
-# Product.create!(name: 'White tshirt',
-#   description: %{white},
-#   image_url: 'white.jpeg',
-#   adquisition_date: DateTime.new(2021,9,1,17))
-
-# Product.create!(name: 'Colours tshirt',
-#   description: %{rainbow},
-#   image_url: 'colours.jpeg',
-#   adquisition_date: DateTime.new(2022,9,1,17))

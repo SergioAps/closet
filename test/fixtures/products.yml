@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  image_url: MyString.jpg
+
+two:
+  name: MyString
+  description: MyText
+  image_url: MyString.jpg
+
+closet:
+  name: tshirt
+  description: new
+  image_url: lorem.jpg
+  adquisition_date: <% Date.yesterday %>
+  colour: white
+

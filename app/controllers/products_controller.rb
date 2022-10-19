@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        puts @product.errors.full_messages
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
@@ -65,6 +66,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :adquisition_date)
+      params.require(:product).permit(:name, :description, :photo, :adquisition_date, :colour)
     end
 end

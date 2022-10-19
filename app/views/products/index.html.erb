@@ -29,7 +29,9 @@
         <tr class="<%= cycle('bg-green-50', 'bg-white') %>">
 
           <td class="px-2 py-3">
-            <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+            <% if product.photo.attached? %>
+              <%= cl_image_tag product.photo.key, height: 200, width: 200 %>
+            <% end %>
           </td>
 
           <td>

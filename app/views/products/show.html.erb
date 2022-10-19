@@ -5,7 +5,9 @@
     <% end %>
 
     <%= render @product %>
-    <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @product.photo.attached? %>
+      <%= cl_image_tag @product.photo.key, height: 300, width: 400 %>
+    <% end %>
 
 
     <%= link_to 'Edit this product', edit_product_path(@product), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

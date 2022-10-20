@@ -1,26 +1,24 @@
-<%= form_with(model: product, class: "contents") do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<% if product.errors.any? %>
+  <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-        <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="container">
-    <%= simple_form_for (@product) do |f| %>
-      <%= f.input :name, placeholder: "Add your Cloth", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-      <%= f.input :description, placeholder: "Add a description", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :adquisition_date, html5: true %>
-      <%= f.input :colour, prompt: "Select a colour", collection: ["White", "Black", "Red", "Yellow"]%>
-      <%= f.button :submit, "Confirm", class: "btn btn-outline-dark btn-new" %>
-    <% end %>
+    <ul>
+      <% product.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
+<div class="container">
+  <%= simple_form_for(@product) do |f| %>
+    <%= f.input :name, placeholder: "Add your Cloth", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= f.input :description, placeholder: "Add a description", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :adquisition_date, html5: true %>
+    <%= f.input :colour, prompt: "Select a colour", collection: ["White", "Black", "Red", "Yellow"]%>
+    <%= f.button :submit, "Confirm", class: "btn btn-outline-dark btn-new" %>
+  <% end %>
+</div>
 
 
 
